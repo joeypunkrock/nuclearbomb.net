@@ -1,0 +1,9 @@
+{
+  "generator-yeo": {
+    "project": "Amicus-FFT",
+    "description": "An Amiculum Digital prototype project",
+    "author": "Joey Thomas",
+    "jsPreprocessor": "ES6(using babel)",
+    "tailwindCSS": "*"
+  }
+}

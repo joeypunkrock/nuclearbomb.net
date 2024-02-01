@@ -1,0 +1,23 @@
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "normalize.css/normalize";
+
+// Site Mixins, Variables and Fonts here
+@import "./mixins";
+@import "./styles";
+@import "./fonts";
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// Print layout here
+@media print {
+}
