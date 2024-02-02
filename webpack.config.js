@@ -176,6 +176,18 @@ module.exports = (env, argv) => {
           },
         },
 
+        // icons
+        {
+          test: /\.(svg)$/i,
+          resourceQuery: { not: [/inline/] }, // ignore images with `?inline` query
+          type: "asset/resource",
+          include: /assets[\\/]icon/, // svgs from `assets/icon` directory only, match posix and win paths
+          generator: {
+            // output filename of images
+            filename: "assets/icon/[name].[ext]",
+          },
+        },
+
         // inline images: png or svg icons with size < 4 KB
         {
           test: /\.(png|svg)$/i,

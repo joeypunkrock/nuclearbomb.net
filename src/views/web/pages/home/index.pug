@@ -12,5 +12,20 @@ block content
 
   h1 Hello World
 
+  .window(style='margin: 32px; width: 250px')
+    .title-bar
+      .title-bar-text
+        | My First VB4 Program
+      .title-bar-controls
+        button(aria-label='Minimize')
+        button(aria-label='Maximize')
+        button(aria-label='Close')
+    .window-body
+      p Hello, world!
+      section.field-row(style='justify-content: flex-end')
+        button OK
+        button Cancel
+
+
 block footer
   include ../../components/layout/footer/footer
