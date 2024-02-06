@@ -10,21 +10,52 @@ block navbar
 
 block content
 
-  h1 Hello World
+  .px-6
 
-  .window(style='margin: 32px; width: 250px')
-    .title-bar
-      .title-bar-text
-        | My First VB4 Program
-      .title-bar-controls
-        button(aria-label='Minimize')
-        button(aria-label='Maximize')
-        button(aria-label='Close')
-    .window-body
-      p Hello, world!
-      section.field-row(style='justify-content: flex-end')
-        button OK
-        button Cancel
+    img(src="/assets/images/wordart.png", alt="" style="max-width: 600px")
+
+    .window.left-20.relative(style='margin: 32px; width: 250px; transform: scale(1.8)')
+      .title-bar
+        .title-bar-text
+          | Missile Launch Command
+        .title-bar-controls
+          button(aria-label='Minimize')
+          button(aria-label='Maximize')
+          button(aria-label='Close')
+      .window-body
+        p.mb-2 Commence nuclear missile launch.
+        section.field-row(style='justify-content: flex-end')
+          button Launch
+          button Cancel
+
+    div(style="margin-top: 120px")
+
+    button Click me
+    input(type='submit')
+    input(type='reset')
+
+    .sunken-panel(style='height: 160px; width: 230px; transform: scale(1.8); margin-left: 100px')
+      table.interactive
+        thead
+          tr
+            th Country
+            th Nuclear Strikes
+            th Current Population
+        tbody
+          tr
+            td France
+            td 2
+            td 64.5 million
+          tr
+            td USA
+            td 6
+            td 315.2 million
+          tr
+            td UK
+            td 4
+            td 59.4 million
+
+
 
 
 block footer

@@ -24,14 +24,24 @@ export default class WorldMap {
           '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
       }).addTo(map);
 
-      var circle = L.circle([51.508, -0.11], {
+      var circle1 = L.circle([51.508, -0.11], {
         color: "red",
         fillColor: "#f03",
         fillOpacity: 0.5,
         radius: 50000,
       }).addTo(map);
 
-      circle.bindPopup("I am a circle.");
+      var circle2 = L.circle([51.1657, 10.11], {
+        color: "red",
+        fillColor: "#f03",
+        fillOpacity: 0.5,
+        radius: 50000,
+      }).addTo(map);
+
+      const circle1Txt = `Nuclear Strike! <br> Killed: 1.7 mil <br> Pop: 48.6 / 46.9 mil <br> Current Pop: 25 mil`
+
+      circle1.bindPopup(circle1Txt);
+      circle2.bindPopup("Nuclear Strike!");
 
       var popup = L.popup().setLatLng([51.513, -0.09]).setContent("I am a standalone popup.").openOn(map);
     }
