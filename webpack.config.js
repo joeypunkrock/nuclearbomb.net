@@ -82,8 +82,7 @@ module.exports = (env, argv) => {
         Images: path.join(__dirname, "src/assets/images/"),
         Fonts: path.join(__dirname, "src/assets/fonts/"),
         Styles: path.join(__dirname, "src/assets/styles/"),
-        WebScripts: path.join(__dirname, "src/assets/webScripts/"),
-        GameScripts: path.join(__dirname, "src/gameScripts/"),
+        Scripts: path.join(__dirname, "src/assets/scripts/"),
       },
     },
 

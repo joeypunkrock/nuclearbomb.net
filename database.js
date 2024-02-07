@@ -12,9 +12,6 @@ const connectDB = async () => {
   } catch (error) {
     console.error("MongoDB connection error:", error);
     process.exit(1); // Exit process with failure
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await mongoose.disconnect();
   }
 };
 
