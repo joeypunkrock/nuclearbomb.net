@@ -24,45 +24,59 @@ async function loadWorldMapModule() {
   }
 }
 
+async function fetchCountries() {
+  try {
+    const response = await fetch("http://localhost:3000/countries"); // Adjust URL as needed
+    if (!response.ok) {
+      throw new Error("Failed to fetch countries");
+    }
+    const countries = await response.json();
+    console.log("All countries:", countries);
+  } catch (error) {
+    console.error("Error fetching countries:", error);
+  }
+}
+
+fetchCountries();
+
+async function fetchSpecificCountry(countryId) {
+  try {
+    const response = await fetch(`http://localhost:3000/countries/${countryId}`); // Adjust URL as needed
+    if (!response.ok) {
+      throw new Error("Failed to fetch specific country");
+    }
+    const specificCountry = await response.json();
+    console.log("Specific country:", specificCountry);
+  } catch (error) {
+    console.error("Error fetching specific country:", error);
+  }
+}
+
+// Call fetchSpecificCountry with the desired country ID to retrieve the specific country
+fetchSpecificCountry("65c25f2058425a029a47177f");
 
 function incrementMissleHit(data) {
-  // fetch('http://localhost:3000/increment-missile-hit', { method: 'POST' })
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  //   .catch(error => console.error('Error:', error));
-
-  fetch('http://localhost:3000/countries')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Countries:', data);
-      // Process the data here. For example, you can display it in your UI.
-    })
-    .catch(error => {
-      console.error('There has been a problem with your fetch operation:', error);
-    });
-
+  fetch("http://localhost:3000/increment-missile-hit", { method: "POST" })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error("Error:", error));
 }
 
 function init() {
   isWorldMapPage = document.body.classList.contains("page-world-map");
 
-  document.querySelector('#btnLaunch').addEventListener('click', () => {
-    console.log('Fire ze missile!')
+  document.querySelector("#btnLaunch").addEventListener("click", () => {
+    console.log("Fire ze missile!");
     incrementMissleHit();
   });
 
   loadWorldMapModule();
 
   //Check DB connetion
-  fetch('http://localhost:3000/', { method: 'GET' })
-    .then(response => response)
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
+  fetch("http://localhost:3000/", { method: "GET" })
+    .then((response) => response)
+    .then((data) => console.log(data))
+    .catch((error) => console.error("Error:", error));
 }
 
 // Function to run when the DOM is ready
