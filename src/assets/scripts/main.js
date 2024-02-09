@@ -56,7 +56,7 @@ async function fetchSpecificCountry(countryId) {
 fetchSpecificCountry("65c25f2058425a029a47177f");
 
 function incrementMissleHit(data) {
-  fetch("http://localhost:3000/increment-missile-hit", { method: "POST" })
+  fetch("http://localhost:3000/countries/increment-missile-hit-random", { method: "POST" })
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.error("Error:", error));
