@@ -1,0 +1,16 @@
+extends ../../layouts/base
+
+block config
+  - pageTitle = 'World Map'
+  - page = 'world-map'
+  - isHome = false
+
+block navbar
+  include ../../components/layout/navbar/navbar
+
+block content
+
+  div#worldMap.world-map-screen
+
+block footer
+  include ../../components/layout/footer/footer

@@ -15,6 +15,7 @@ const breakpoints = {
 };
 
 let isWorldMapPage;
+let isCommandCenterPage;
 
 // Dynamiclly load World Map module
 async function loadWorldMapModule() {
@@ -37,7 +38,7 @@ async function fetchCountries() {
   }
 }
 
-fetchCountries();
+//fetchCountries();
 
 async function fetchSpecificCountry(countryId) {
   try {
@@ -53,7 +54,7 @@ async function fetchSpecificCountry(countryId) {
 }
 
 // Call fetchSpecificCountry with the desired country ID to retrieve the specific country
-fetchSpecificCountry("65c25f2058425a029a47177f");
+//fetchSpecificCountry("65c25f2058425a029a47177f");
 
 function incrementMissleHit(data) {
   fetch("http://localhost:3000/countries/increment-missile-hit-random", { method: "POST" })
@@ -64,19 +65,16 @@ function incrementMissleHit(data) {
 
 function init() {
   isWorldMapPage = document.body.classList.contains("page-world-map");
+  isCommandCenterPage = document.body.classList.contains("page-command-center");
 
-  document.querySelector("#btnLaunch").addEventListener("click", () => {
-    console.log("Fire ze missile!");
-    incrementMissleHit();
-  });
+  if (isCommandCenterPage) {
+    document.querySelector("#btnLaunch").addEventListener("click", () => {
+      console.log("Fire ze missile!");
+      incrementMissleHit();
+    });
+  }
 
   loadWorldMapModule();
-
-  //Check DB connetion
-  fetch("http://localhost:3000/", { method: "GET" })
-    .then((response) => response)
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Error:", error));
 }
 
 // Function to run when the DOM is ready

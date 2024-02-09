@@ -138,7 +138,7 @@ module.exports = (env, argv) => {
         },
 
         {
-          test: /\.json$/i,
+          test: /\.(json|geojson)$/i,
           type: "asset/resource",
           include: /data/,
           generator: {

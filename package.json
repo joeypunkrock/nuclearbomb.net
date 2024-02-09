@@ -19,6 +19,7 @@
 		"not dead"
 	],
 	"dependencies": {
+		"@turf/turf": "^6.5.0",
 		"98.css": "^0.1.20",
 		"concurrently": "^8.2.2",
 		"core-js": "^3.31.1",
