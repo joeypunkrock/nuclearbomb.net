@@ -7,6 +7,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const countryRoutes = require('./routes/countryRoutes');
+const missileHitRoutes = require('./routes/missileHitRoutes');
 
 const PORT = process.env.PORT || 3000;
 // Connect to MongoDB
@@ -23,7 +24,9 @@ connectDB()
   });
 
 const app = express();
+app.use(express.json());
 app.use(cors());
 
 // Use countryRoutes for all routes related to countries
 app.use('/countries', countryRoutes);
+app.use('/missileHits', missileHitRoutes);

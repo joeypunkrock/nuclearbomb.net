@@ -39,7 +39,7 @@ export default class WorldMap {
         // Add GeoJSON layer to the map
         this.countriesLayer = L.geoJSON(data, {
           style: {
-            fillColor: "#cccccc", // Default fill color
+            fillColor: "red",
             fillOpacity: 0,
             color: "#000", // Border color
             weight: 1, // Border weight
@@ -49,13 +49,12 @@ export default class WorldMap {
             layer.on("click", (e) => {
               // Reset styles for all countries
               this.countriesLayer.setStyle({
-                fillColor: "#cccccc", // Default fill color
                 fillOpacity: 0,
+                color: "#000", // Border color
               });
               // Highlight the selected country
               layer.setStyle({
-                fillColor: "red", // Highlighted fill color
-                fillOpacity: 0.2, // Highlighted fill opacity
+                fillOpacity: 0.4,
               });
 
               const countryName = feature.properties.ADMIN; // Assuming country name is stored in the GeoJSON properties
@@ -89,7 +88,7 @@ export default class WorldMap {
     // Assuming you have the GeoJSON layer for the country already added to the map
     // You can obtain a specific country's polygon layer from the GeoJSON layer
 
-    // Example: Get the polygon layer of the first feature in the GeoJSON layer
+    // Example: Get the polygon layer of the first feature in the GeoJSON layer  81 is United Kingdom
     const countryPolygon = this.countriesLayer.getLayers()[81].feature.geometry; // Adjust index as needed
 
     console.log(this.countriesLayer.getLayers()[81]);

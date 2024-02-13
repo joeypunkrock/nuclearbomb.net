@@ -56,8 +56,45 @@ async function fetchSpecificCountry(countryId) {
 // Call fetchSpecificCountry with the desired country ID to retrieve the specific country
 //fetchSpecificCountry("65c25f2058425a029a47177f");
 
-function incrementMissleHit(data) {
-  fetch("http://localhost:3000/countries/increment-missile-hit-random", { method: "POST" })
+// Function to launch a missile from the frontend
+async function launchMissile(missileData) {
+  try {
+
+    console.log(missileData);
+
+    const response = await fetch("http://localhost:3000/countries/launch-missile", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(missileData),
+    });
+
+    // Check if the request was successful
+    if (response.ok) {
+      const data = await response.json();
+      console.log("Missile launched successfully:", data);
+    } else {
+      console.error("Failed to launch missile:", response.statusText);
+    }
+  } catch (error) {
+    console.error("Error launching missile:", error);
+  }
+}
+
+function incrementMissleHit(missileHitdata, countryData) {
+  fetch("http://localhost:3000/missileHits/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(missileHitdata),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error("Error:", error));
+
+  fetch("http://localhost:3000/countries/increment-missile-hit", { method: "POST" })
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.error("Error:", error));
@@ -70,7 +107,13 @@ function init() {
   if (isCommandCenterPage) {
     document.querySelector("#btnLaunch").addEventListener("click", () => {
       console.log("Fire ze missile!");
-      incrementMissleHit();
+      // incrementMissleHit({
+      //   lat: 51.508, // Example latitude
+      //   lng: -0.11, // Example longitude
+      //   countryId: "65c25e8758425a029a46a44b", // Example countryId United Kingdom
+      // });
+
+      launchMissile({ countryId: null, lat: 51.508, lng: -0.11, missileType: null, damageRadius: null, damageLevel: "severe" }); // Replace 'country_id_here' with the actual ID of the country
     });
   }
 

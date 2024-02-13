@@ -4,8 +4,7 @@ const countryController = require('../controllers/countryController');
 
 router.get('/', countryController.getAllCountries);
 router.get('/:countryId', countryController.getCountryById);
-router.post('/increment-missile-hit', countryController.incrementMissileHit);
-router.post('/increment-missile-hit-random', countryController.incrementMissileHitRandom);
+router.post('/launch-missile', countryController.launchMissile);
             
 // Other routes for creating, updating, and deleting countries would go here...
 
