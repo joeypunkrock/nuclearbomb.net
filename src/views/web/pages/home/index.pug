@@ -10,50 +10,83 @@ block navbar
 
 block content
 
-  .px-6
+  .command-bg
 
-    img(src="/assets/images/wordart.png", alt="" style="max-width: 600px")
+  .main-monitor
+    .inner-element
+      img(src="/assets/images/wordart.png" alt="" style="max-width: 70%; margin: 0 auto; margin-top: -40px; margin-bottom: 50px;")
+      div(style="transform: scale(1.3)")
+        .window.left-20.relative(style='margin: 32px; width: 250px;')
+          .title-bar
+            .title-bar-text
+              | Missile Launch Command
+            .title-bar-controls
+              button(aria-label='Minimize')
+              button(aria-label='Maximize')
+              button(aria-label='Close')
+          .window-body
+            p.mb-2.text-base Commence nuclear missile launch
+            section.field-row(style='justify-content: flex-end')
+              button#btnLaunch Launch
+        .window.left-20.relative(style='margin: 32px; width: 250px;')
+          .title-bar
+            .title-bar-text
+              | Thermonuclear War Map
+            .title-bar-controls
+              button(aria-label='Minimize')
+              button(aria-label='Maximize')
+              button(aria-label='Close')
+          .window-body
+            p.mb-2.text-base Go to world map
+            section.field-row(style='justify-content: flex-end')
+              button#btnLaunch
+                a(href="/world") World Map
 
-    .window.left-20.relative(style='margin: 32px; width: 250px; transform: scale(1.8)')
-      .title-bar
-        .title-bar-text
-          | Missile Launch Command
-        .title-bar-controls
-          button(aria-label='Minimize')
-          button(aria-label='Maximize')
-          button(aria-label='Close')
-      .window-body
-        p.mb-2 Commence nuclear missile launch.
-        section.field-row(style='justify-content: flex-end')
-          button#btnLaunch Launch
-          button Cancel
 
-    div(style="margin-top: 120px")
+  //- .px-6
 
-    button Click me
-    input(type='submit')
-    input(type='reset')
+  //-   img(src="/assets/images/wordart.png" alt="" style="max-width: 600px")
 
-    .sunken-panel(style='height: 160px; width: 230px; transform: scale(1.8); margin-left: 100px')
-      table.interactive
-        thead
-          tr
-            th Country
-            th Nuclear Strikes
-            th Current Population
-        tbody
-          tr
-            td France
-            td 2
-            td 64.5 million
-          tr
-            td USA
-            td 6
-            td 315.2 million
-          tr
-            td UK
-            td 4
-            td 59.4 million
+  //-   .window.left-20.relative(style='margin: 32px; width: 250px; transform: scale(1.8)')
+  //-     .title-bar
+  //-       .title-bar-text
+  //-         | Missile Launch Command
+  //-       .title-bar-controls
+  //-         button(aria-label='Minimize')
+  //-         button(aria-label='Maximize')
+  //-         button(aria-label='Close')
+  //-     .window-body
+  //-       p.mb-2 Commence nuclear missile launch.
+  //-       section.field-row(style='justify-content: flex-end')
+  //-         button#btnLaunch Launch
+  //-         button Cancel
+
+  //-   div(style="margin-top: 120px")
+
+  //-   button Click me
+  //-   input(type='submit')
+  //-   input(type='reset')
+
+  //-   .sunken-panel(style='height: 160px; width: 230px; transform: scale(1.8); margin-left: 100px')
+  //-     table.interactive
+  //-       thead
+  //-         tr
+  //-           th Country
+  //-           th Nuclear Strikes
+  //-           th Current Population
+  //-       tbody
+  //-         tr
+  //-           td France
+  //-           td 2
+  //-           td 64.5 million
+  //-         tr
+  //-           td USA
+  //-           td 6
+  //-           td 315.2 million
+  //-         tr
+  //-           td UK
+  //-           td 4
+  //-           td 59.4 million
 
 
 

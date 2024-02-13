@@ -1,0 +1,61 @@
+$monitorWidth: 1000px;
+$monitorHeight: 1000px;
+$screenWidth: 465px;
+$screenHeight: 415px;
+$screenTop: 36%;
+
+
+.command-bg {
+    background-image: url('../../images/command-bg-1.jpg');
+    background-size: cover; // Ensure the whole image is visible
+    background-repeat: no-repeat;
+    background-position: center center; // Keep the image centered
+    width: 100vw; // Full viewport width
+    height: 100vh; // Full viewport height
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-monitor {
+    background-image: url('../../images/monitor-98.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: $monitorWidth;
+    height: $monitorHeight;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .inner-element {
+        position: absolute;
+        top: $screenTop;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: $screenWidth;
+        height: $screenHeight;
+        //border: 1px solid #ccc; // Just for visibility
+
+        .responsive-text {
+            font-size: 2vw; // Scales text size based on viewport width
+            color: #333;
+            text-align: center;
+        }
+    }
+}
+
+
+// Additional media queries if necessary
+@media (max-width: 1024px) {
+    .main-monitor .inner-element .responsive-text {
+        font-size: 3vw; // Larger text for smaller screens
+    }
+}
+
+@media (min-width: 1921px) {
+    .main-monitor .inner-element .responsive-text {
+        font-size: 1.5vw; // Smaller text for larger screens
+    }
+}
