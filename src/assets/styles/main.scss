@@ -41,4 +41,5 @@ body::after {
     height: 100%;
     background-image: repeating-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 0.5em);
 	opacity: 0.3;
+    pointer-events: none;
 }
