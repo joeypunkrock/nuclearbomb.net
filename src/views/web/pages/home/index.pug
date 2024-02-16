@@ -12,64 +12,66 @@ block content
 
   // TODO: Animate Highlitght spacebar on keyboard and bind launch to spacebar
 
-  .command-bg
+  .lcd-lines
 
-  .main-monitor
-    .inner-element
-      img(src="/assets/images/wordart.png" alt="" style="max-width: 100%; margin: 0 auto; margin-top: -90px; margin-bottom: 60px;")
-      div(style="transform: scale(1.4)")
-        .window.left-20.relative(style='margin: 32px; width: 260px; margin-left: -45px')
-          .title-bar
-            .title-bar-text.text-xs
-              | Missile Launch Command
-            .title-bar-controls
-              button(aria-label='Minimize')
-              button(aria-label='Maximize')
-              button(aria-label='Close')
-          .window-body
-            p.mb-2.text-base Commence nuclear missile launch!
-            section.field-row(style='justify-content: flex-end')
-              button Cancel
-              button#btnLaunch.text-red-700.font-bold Launch
-        .window.left-20.relative(style='margin: 32px; width: 250px; margin-left: -30px; margin-top: -10px')
-          .title-bar
-            .title-bar-text.text-xs
-              | Thermonuclear War Map
-            .title-bar-controls
-              button(aria-label='Minimize')
-              button(aria-label='Maximize')
-              button(aria-label='Close')
-          .window-body
-            p.mb-2.text-base Witness Devastation and Intel
-            section.field-row(style='justify-content: flex-end')
-              button Cancel
-              button#btnLaunch.font-bold
-                a.text-blue-900(href="/world") Open Map
+    .command-bg
 
-      .sunken-panel(style='height: 190px; width: 180px; transform: scale(1.2); margin-left: 360px; margin-top: -350px;')
-        table.interactive
-          thead
-            tr
-              th Country
-              th Pop
-              th killed
-              th Strikes
-          tbody
-            tr
-              td France
-              td 64 mil
-              td 14 mil
-              td 2
-            tr
-              td USA
-              td 315 mil
-              td 35 mil
-              td 6
-            tr
-              td UK
-              td 59 mil
-              td 9 mil
-              td 4
+    .main-monitor
+      .inner-element
+        img(src="/assets/images/wordart.png" alt="" style="max-width: 120%; margin: 0 auto; margin-top: -60px; margin-bottom: 60px; margin-left: -60px")
+        div(style="transform: scale(1.8)")
+          .window.left-20.relative(style='margin: 32px; width: 260px; margin-left: -55px; margin-top: 120px')
+            .title-bar
+              .title-bar-text.text-xs
+                | Missile Launch Command
+              .title-bar-controls
+                button(aria-label='Minimize')
+                button(aria-label='Maximize')
+                button(aria-label='Close')
+            .window-body
+              p.mb-2.text-base Commence nuclear missile launch!
+              section.field-row(style='justify-content: flex-end')
+                button Cancel
+                button#btnLaunch.text-red-700.font-bold Launch
+          .window.left-20.relative(style='margin: 32px; width: 250px; margin-left: -40px; margin-top: -10px')
+            .title-bar
+              .title-bar-text.text-xs
+                | Thermonuclear War Map
+              .title-bar-controls
+                button(aria-label='Minimize')
+                button(aria-label='Maximize')
+                button(aria-label='Close')
+            .window-body
+              p.mb-2.text-base Witness Devastation and Intel
+              section.field-row(style='justify-content: flex-end')
+                button Cancel
+                button#btnLaunch.font-bold
+                  a.text-blue-900(href="/world") Open Map
+
+        .sunken-panel(style='height: 290px; width: 177px; transform: scale(1.5); margin-left: 400px; margin-top: -350px;')
+          table.interactive(style="margin-top: 0;")
+            thead
+              tr
+                th Country
+                th Pop
+                th killed
+                th Strikes
+            tbody
+              tr
+                td France
+                td 64 mil
+                td 14 mil
+                td 2
+              tr
+                td USA
+                td 315 mil
+                td 35 mil
+                td 6
+              tr
+                td UK
+                td 59 mil
+                td 9 mil
+                td 4
       //- .title-bar
       //-   .title-bar-text A Window With A Status Bar
       //-     .window-body
