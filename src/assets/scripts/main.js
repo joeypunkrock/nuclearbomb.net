@@ -25,6 +25,14 @@ async function loadWorldMapModule() {
   }
 }
 
+// Dynamiclly load Computer module
+async function loadComputerModule() {
+  if (isCommandCenterPage) {
+    const ComputerModule = await import("./modules/computer");
+    computer = new ComputerModule.default({ breakpoints });
+  }
+}
+
 async function fetchCountries() {
   try {
     const response = await fetch("http://localhost:3000/countries"); // Adjust URL as needed
@@ -59,7 +67,6 @@ async function fetchSpecificCountry(countryId) {
 // Function to launch a missile from the frontend
 async function launchMissile(missileData) {
   try {
-
     console.log(missileData);
 
     const response = await fetch("http://localhost:3000/countries/launch-missile", {
@@ -107,17 +114,31 @@ function init() {
   if (isCommandCenterPage) {
     document.querySelector("#btnLaunch").addEventListener("click", () => {
       console.log("Fire ze missile!");
-      // incrementMissleHit({
-      //   lat: 51.508, // Example latitude
-      //   lng: -0.11, // Example longitude
-      //   countryId: "65c25e8758425a029a46a44b", // Example countryId United Kingdom
-      // });
-
       launchMissile({ countryId: null, lat: 51.508, lng: -0.11, missileType: null, damageRadius: null, damageLevel: "severe" }); // Replace 'country_id_here' with the actual ID of the country
     });
   }
 
   loadWorldMapModule();
+  loadComputerModule();
+
+  function scaleContent() {
+    const baseWidth = 1570; // Base screen width for scaling
+    const baseHeight = 1280; // Base screen height for scaling
+    const scaleWidth = window.innerWidth / baseWidth;
+    const scaleHeight = window.innerHeight / baseHeight;
+    const scale = Math.min(scaleWidth, scaleHeight); // Use the smaller scale factor to keep aspect ratio
+
+    const innerElements = document.querySelectorAll(".main-monitor-inner");
+    innerElements.forEach((el) => {
+      el.style.transform = `translate(-50%,-50%) scale(${scale})`;
+    });
+  }
+
+  // Initial scaling
+  scaleContent();
+
+  // Rescale on window resize
+  window.addEventListener("resize", scaleContent);
 }
 
 // Function to run when the DOM is ready

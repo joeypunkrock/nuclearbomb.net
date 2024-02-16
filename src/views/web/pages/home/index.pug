@@ -17,120 +17,63 @@ block content
     .command-bg
 
     .main-monitor
-      .inner-element
-        img(src="/assets/images/wordart.png" alt="" style="max-width: 120%; margin: 0 auto; margin-top: -60px; margin-bottom: 60px; margin-left: -60px")
-        div(style="transform: scale(1.8)")
-          .window.left-20.relative(style='margin: 32px; width: 260px; margin-left: -55px; margin-top: 120px')
-            .title-bar
-              .title-bar-text.text-xs
-                | Missile Launch Command
-              .title-bar-controls
-                button(aria-label='Minimize')
-                button(aria-label='Maximize')
-                button(aria-label='Close')
-            .window-body
-              p.mb-2.text-base Commence nuclear missile launch!
-              section.field-row(style='justify-content: flex-end')
-                button Cancel
-                button#btnLaunch.text-red-700.font-bold Launch
-          .window.left-20.relative(style='margin: 32px; width: 250px; margin-left: -40px; margin-top: -10px')
-            .title-bar
-              .title-bar-text.text-xs
-                | Thermonuclear War Map
-              .title-bar-controls
-                button(aria-label='Minimize')
-                button(aria-label='Maximize')
-                button(aria-label='Close')
-            .window-body
-              p.mb-2.text-base Witness Devastation and Intel
-              section.field-row(style='justify-content: flex-end')
-                button Cancel
-                button#btnLaunch.font-bold
-                  a.text-blue-900(href="/world") Open Map
+      .main-monitor-inner.relative
+        .monitor-inner-boundary
+          img(src="/assets/images/wordart.png" alt="" class="monitor-title")
+          div
+            .window.left-20.absolute.window-launch.window-draggable(style="transform: scale(1.6)")
+              .title-bar
+                .title-bar-text.text-xs
+                  | Missile Launch Command
+                .title-bar-controls
+                  button(aria-label='Minimize')
+                  button(aria-label='Maximize')
+                  button(aria-label='Close')
+              .window-body
+                p.mb-2.text-base Commence nuclear missile launch!
+                section.field-row(style='justify-content: flex-end')
+                  button Cancel
+                  button#btnLaunch.text-red-700.font-bold Launch
+            .window.left-20.absolute.window-map.window-draggable(style="transform: scale(1.6)")
+              .title-bar
+                .title-bar-text.text-xs
+                  | Thermonuclear War Map
+                .title-bar-controls
+                  button(aria-label='Minimize')
+                  button(aria-label='Maximize')
+                  button(aria-label='Close')
+              .window-body
+                p.mb-2.text-base Witness Devastation and Intel
+                section.field-row(style='justify-content: flex-end')
+                  button Cancel
+                  button#btnLaunch.font-bold
+                    a.text-blue-900(href="/world") Open Map
 
-        .sunken-panel(style='height: 290px; width: 177px; transform: scale(1.5); margin-left: 400px; margin-top: -350px;')
-          table.interactive(style="margin-top: 0;")
-            thead
-              tr
-                th Country
-                th Pop
-                th killed
-                th Strikes
-            tbody
-              tr
-                td France
-                td 64 mil
-                td 14 mil
-                td 2
-              tr
-                td USA
-                td 315 mil
-                td 35 mil
-                td 6
-              tr
-                td UK
-                td 59 mil
-                td 9 mil
-                td 4
-      //- .title-bar
-      //-   .title-bar-text A Window With A Status Bar
-      //-     .window-body
-      //-       p  There are just so many possibilities:
-      //-       ul
-      //-         li A Task Manager
-      //-         li A Notepad
-      //-         li Or even a File Explorer!
-      //-     .status-bar
-      //-       p.status-bar-field Press F1 for help
-      //-       p.status-bar-field Slide 1
-      //-       p.status-bar-field CPU Usage: 14%
-
-
-  //- .px-6
-
-  //-   img(src="/assets/images/wordart.png" alt="" style="max-width: 600px")
-
-  //-   .window.left-20.relative(style='margin: 32px; width: 250px; transform: scale(1.8)')
-  //-     .title-bar
-  //-       .title-bar-text
-  //-         | Missile Launch Command
-  //-       .title-bar-controls
-  //-         button(aria-label='Minimize')
-  //-         button(aria-label='Maximize')
-  //-         button(aria-label='Close')
-  //-     .window-body
-  //-       p.mb-2 Commence nuclear missile launch.
-  //-       section.field-row(style='justify-content: flex-end')
-  //-         button#btnLaunch Launch
-  //-         button Cancel
-
-  //-   div(style="margin-top: 120px")
-
-  //-   button Click me
-  //-   input(type='submit')
-  //-   input(type='reset')
-
-  //-   .sunken-panel(style='height: 160px; width: 230px; transform: scale(1.8); margin-left: 100px')
-  //-     table.interactive
-  //-       thead
-  //-         tr
-  //-           th Country
-  //-           th Nuclear Strikes
-  //-           th Current Population
-  //-       tbody
-  //-         tr
-  //-           td France
-  //-           td 2
-  //-           td 64.5 million
-  //-         tr
-  //-           td USA
-  //-           td 6
-  //-           td 315.2 million
-  //-         tr
-  //-           td UK
-  //-           td 4
-  //-           td 59.4 million
-
+            .sunken-panel.absolute.window-country-stats.window-draggable(style="transform: scale(1.6)")
+              table.interactive(style="margin-top: 0;")
+                thead
+                  tr
+                    th Country
+                    th Pop
+                    th killed
+                    th Strikes
+                tbody
+                  tr
+                    td France
+                    td 64 mil
+                    td 14 mil
+                    td 2
+                  tr
+                    td USA
+                    td 315 mil
+                    td 35 mil
+                    td 6
+                  tr
+                    td UK
+                    td 59 mil
+                    td 9 mil
+                    td 4
+    .main-monitor.main-monitor--trans
 
 
 

@@ -2,11 +2,10 @@ $monitorWidth: 95vw;
 $monitorHeight: 95vh;
 $screenWidth: 465px;
 $screenHeight: 415px;
-$screenTop: 36%;
-
+$screenTop: 50%;
 
 .command-bg {
-    background-image: url('../../images/command-bg-1.jpg');
+    background-image: url("../../images/command-bg-1.jpg");
     background-size: cover; // Ensure the whole image is visible
     background-repeat: no-repeat;
     background-position: center center; // Keep the image centered
@@ -18,7 +17,7 @@ $screenTop: 36%;
 }
 
 .main-monitor {
-    background-image: url('../../images/monitor-green-nokeyboard-stickers.png');
+    background-image: url("../../images/monitor-green-nokeyboard-stickers.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -28,22 +27,68 @@ $screenTop: 36%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    .inner-element {
-        position: absolute;
-        top: $screenTop;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: $screenWidth;
-        height: $screenHeight;
-        //border: 1px solid #ccc; // Just for visibility
-
-        .responsive-text {
-            font-size: 2vw; // Scales text size based on viewport width
-            color: #333;
-            text-align: center;
-        }
+    &--trans {
+        background-image: url("../../images/monitor-trans-nokeyboard-stickers.png");
+        pointer-events: none;
+        touch-action: none;
+        user-select: none;
     }
+}
+
+.main-monitor-inner {
+    position: absolute;
+    top: $screenTop;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $screenWidth;
+    height: $screenHeight;
+    //border: 1px solid #ccc; // Just for visibility
+
+    .responsive-text {
+        font-size: 2vw; // Scales text size based on viewport width
+        color: #333;
+        text-align: center;
+    }
+
+    .monitor-inner-boundary {
+        left: -200px;
+        top: -250px;
+        position: absolute;
+        //background: red;
+        width: 870px;
+        height: 780px;
+    }
+}
+
+.monitor-title {
+    max-width: 600px;
+    position: absolute;
+    top: 20px;
+    left: -40px;
+    right: 0;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.window-launch {
+    top: 230px;
+    left: 140px;
+}
+
+.window-map {
+    top: 420px;
+    left: 180px;
+}
+
+.window-country-stats {
+    top: 180px;
+    left: 590px;
+}
+
+.window-draggable {
+    touch-action: none;
+    user-select: none;
+    z-index: 1;
 }
 
 .lcd-lines {
@@ -54,13 +99,15 @@ $screenTop: 36%;
     overflow: hidden;
     background: radial-gradient(var(--bg-color-start), var(--bg-color-end));
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 100%;
         background-image: repeating-linear-gradient(transparent, rgba(0, 0, 0, 0.3) 0.5em);
         opacity: 0.3;
         pointer-events: none;
+        touch-action: none;
+        user-select: none;
     }
 }
 
