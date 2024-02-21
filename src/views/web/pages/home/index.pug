@@ -18,10 +18,18 @@ block content
 
     .main-monitor
       .main-monitor-inner.relative
+        .monitor-thumb.monitor-thumb--launch.z-10(data-windowselector="windowLaunch")
+        .monitor-thumb.monitor-thumb--map.z-10(data-windowselector="windowMap")
+        .monitor-thumb.monitor-thumb--cmd.z-10(data-windowselector="windowCmd")
+        .monitor-thumb.monitor-thumb--table.z-10(data-windowselector="windowStats")
+        .monitor-thumb.monitor-thumb--profile.z-10(data-windowselector="windowProfile")
+          .thumb-title Login
         .monitor-inner-boundary
           img(src="/assets/images/wordart.png" alt="" class="monitor-title")
-          div
-            .window.left-20.absolute.window-launch.window-draggable(style="transform: scale(1.6)")
+          div.logged-text Logged Out
+          div.z-10
+            #terminal.absolute.window-cmd.window-draggable(style="transform: scale(0.9); display: none;" data-scale="0.9" data-windowreceiver="windowCmd")
+            .window.left-20.absolute.window-launch.window-draggable(style="transform: scale(1.6)" data-scale="1.6" data-windowreceiver="windowLaunch")
               .title-bar
                 .title-bar-text.text-xs
                   | Missile Launch Command
@@ -32,9 +40,9 @@ block content
               .window-body
                 p.mb-2.text-base Commence nuclear missile launch!
                 section.field-row(style='justify-content: flex-end')
-                  button Cancel
+                  button.cancel-button Cancel
                   button#btnLaunch.text-red-700.font-bold Launch
-            .window.left-20.absolute.window-map.window-draggable(style="transform: scale(1.6)")
+            .window.left-20.absolute.window-map.window-draggable(style="transform: scale(1.6)" data-scale="1.6" data-windowreceiver="windowMap")
               .title-bar
                 .title-bar-text.text-xs
                   | Thermonuclear War Map
@@ -45,18 +53,18 @@ block content
               .window-body
                 p.mb-2.text-base Witness Devastation and Intel
                 section.field-row(style='justify-content: flex-end')
-                  button Cancel
+                  button.cancel-button Cancel
                   button#btnLaunch.font-bold
                     a.text-blue-900(href="/world") Open Map
 
-            .sunken-panel.absolute.window-country-stats.window-draggable(style="transform: scale(1.6)")
+            .sunken-panel.absolute.window-country-stats.window-draggable(style="transform: scale(1.5)" data-scale="1.5" data-windowreceiver="windowStats")
               table.interactive(style="margin-top: 0;")
                 thead
                   tr
                     th Country
                     th Pop
                     th killed
-                    th Strikes
+                    th Hits
                 tbody
                   tr
                     td France
@@ -72,9 +80,29 @@ block content
                     td UK
                     td 59 mil
                     td 9 mil
+                    td 7
+                  tr
+                    td Germany
+                    td 69 mil
+                    td 8 mil
+                    td 2
+                  tr
+                    td Italy
+                    td 57 mil
+                    td 12 mil
                     td 4
+                  tr
+                    td Russia
+                    td 129 mil
+                    td 23 mil
+                    td 2
+                  tr
+                    td China
+                    td 329 mil
+                    td 33 mil
+                    td 6
+                   
     .main-monitor.main-monitor--trans
-
 
 
 block footer

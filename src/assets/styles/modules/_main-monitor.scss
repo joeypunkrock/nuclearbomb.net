@@ -61,28 +61,48 @@ $screenTop: 50%;
 }
 
 .monitor-title {
-    max-width: 600px;
+    max-width: 500px;
     position: absolute;
-    top: 20px;
+    top: 40px;
     left: -40px;
     right: 0;
     margin: 0 auto;
     pointer-events: none;
 }
 
-.window-launch {
-    top: 230px;
-    left: 140px;
+.logged-text {
+    font-family: "Pixelated MS Sans Serif",Arial;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: #e9e9e9;
+    position: absolute;
+    top: 152px;
+    left: 540px;
+    font-size: 1.4rem;
+    transform: rotate(-15deg);
 }
 
-.window-map {
-    top: 420px;
+.window-launch {
+    top: 330px;
     left: 180px;
 }
 
+.window-map {
+    top: 530px;
+    left: 215px;
+}
+
 .window-country-stats {
-    top: 180px;
-    left: 590px;
+    top: 280px;
+    left: 580px;
+    height: 200px;
+    width: 188px;
+}
+
+.window-cmd {
+    left: 300px;
+    top: 400px;
+    
 }
 
 .window-draggable {
@@ -90,6 +110,80 @@ $screenTop: 50%;
     user-select: none;
     z-index: 1;
 }
+
+.monitor-thumb {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    &:hover {
+        opacity: 0.8;
+    }
+    &--launch {
+        top: -140px;
+        left: -125px;
+        background-image: url("../../images/icon-launch.png");
+    }
+    &--map {
+        top: -63px;
+        left: -125px;
+        background-image: url("../../images/icon-map.png");
+    }
+    &--cmd {
+        top: 21px;
+        left: -125px;
+        background-image: url("../../images/icon-cmd.png");
+    }
+    &--table {
+        top: 100px;
+        left: -125px;
+        background-image: url("../../images/icon-table.png");
+    }
+    &--profile {
+        top: -140px;
+        left: 540px;
+        background-image: url("../../images/icon-profile.png");
+    }
+}
+
+.thumb-title {
+    color: #e9e9e9;
+    font-family: "Pixelated MS Sans Serif",Arial;
+    letter-spacing: 0;
+    position: absolute;
+    top: 57px;
+    right: 8px;
+    font-size: 1.2em;
+}
+
+#terminal {
+    position: absolute;
+    width: 500px; /* Set a fixed width */
+    height: 250px; /* Set a fixed height */
+    background-color: black; /* Background color of the terminal */
+    color: white; /* Text color */
+    border: 1px solid #333; /* Optional border */
+    padding: 10px; /* Padding inside the terminal */
+    box-sizing: border-box; /* Ensures padding doesn't affect overall dimensions */
+    overflow: hidden; /* Adds a scrollbar if content overflows */
+    font-family: 'Courier New', Courier, monospace; /* Font for the terminal */
+    * {
+        overflow-x: hidden;
+    }
+}
+
+.xterm-viewport {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.window-open {
+    filter: grayscale(100%);
+}
+
 
 .lcd-lines {
     display: flex;

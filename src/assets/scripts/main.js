@@ -1,4 +1,6 @@
 // Import Modules
+import { Terminal } from "xterm";
+import Cmd from './modules/cmd.js';
 
 // Define environment-specific variables
 const env = "devserver",
@@ -21,7 +23,7 @@ let isCommandCenterPage;
 async function loadWorldMapModule() {
   if (isWorldMapPage) {
     const WorldMapModule = await import("./modules/worldMap");
-    worldMap = new WorldMapModule.default({ breakpoints });
+    const worldMap = new WorldMapModule.default({ breakpoints });
   }
 }
 
@@ -29,7 +31,10 @@ async function loadWorldMapModule() {
 async function loadComputerModule() {
   if (isCommandCenterPage) {
     const ComputerModule = await import("./modules/computer");
-    computer = new ComputerModule.default({ breakpoints });
+    const CmdModule = await import("./modules/cmd"); // Import Cmd module
+    const computer = new ComputerModule.default({ breakpoints });
+    const cmd = new CmdModule.default({ breakpoints }); // Create an instance of Cmd
+    // You can now use 'computer' and 'cmd' as needed
   }
 }
 
@@ -139,6 +144,16 @@ function init() {
 
   // Rescale on window resize
   window.addEventListener("resize", scaleContent);
+
+  function handleInput(data) {
+    // Process the input data (e.g., display it back in the terminal)
+    term.write(data);
+
+    // Example: Implement command handling logic here
+    if (data === '\r') { // Enter key pressed
+      term.write('\nYou pressed ENTER\n$ ');
+    }
+  }
 }
 
 // Function to run when the DOM is ready
